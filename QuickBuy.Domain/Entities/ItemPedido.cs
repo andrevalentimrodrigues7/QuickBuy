@@ -9,5 +9,17 @@ namespace QuickBuy.Domain.Entities
         public int IdItemPedido { get; set; }
         public int IdProduto { get; set; }
         public int Quantidade { get; set; }
+
+        public override void Validate()
+        {
+            if (IdProduto <= 0)
+            {
+                AdicionarMensagemValidacao("Alerta - Não foi encontrado a referência do produto");
+            }
+            if (Quantidade <= 0)
+            {
+                AdicionarMensagemValidacao("Alerta - Deve conter pelo menos 1 item");
+            }
+        }
     }
 }

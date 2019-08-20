@@ -15,5 +15,20 @@ namespace QuickBuy.Domain.Entities
         /// </summary>
         public ICollection<Pedido> Pedidos { get; set; }
 
+        public override void Validate()
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                AdicionarMensagemValidacao("Alerta - Informe um endereço de e-mail");
+            }
+            if (string.IsNullOrEmpty(Senha))
+            {
+                AdicionarMensagemValidacao("Alerta - Informe uma senha");
+            }
+            if (string.IsNullOrEmpty(Nome))
+            {
+                AdicionarMensagemValidacao("Alerta - Por favor, informe o seu nome");
+            }
+        }
     }
 }

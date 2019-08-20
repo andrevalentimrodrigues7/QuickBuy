@@ -37,6 +37,10 @@ namespace QuickBuy.Domain.Entities
             {
                 AdicionarMensagemValidacao("Alerta - O CEP deve estar preenchido");
             }
+            if (FormaPagamentoId == 0)
+            {
+                AdicionarMensagemValidacao("Alerta - Forma de Pagamento não informada");
+            }
 
         }
     }
