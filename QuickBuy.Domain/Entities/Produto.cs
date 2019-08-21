@@ -13,6 +13,8 @@ namespace QuickBuy.Domain.Entities
 
         public override void Validate()
         {
+            LimparMensagemValidacao();
+
             if (string.IsNullOrEmpty(Nome))
             {
                 AdicionarMensagemValidacao("Alerta - O Nome do Produto não pode ficar em branco");

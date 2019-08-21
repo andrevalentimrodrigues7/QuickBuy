@@ -17,6 +17,8 @@ namespace QuickBuy.Domain.Entities
 
         public override void Validate()
         {
+            LimparMensagemValidacao();
+
             if (string.IsNullOrEmpty(Email))
             {
                 AdicionarMensagemValidacao("Alerta - Informe um endereço de e-mail");

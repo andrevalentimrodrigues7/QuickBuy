@@ -12,6 +12,7 @@ namespace QuickBuy.Domain.Entities
 
         public override void Validate()
         {
+            LimparMensagemValidacao();
             if (IdProduto <= 0)
             {
                 AdicionarMensagemValidacao("Alerta - Não foi encontrado a referência do produto");
