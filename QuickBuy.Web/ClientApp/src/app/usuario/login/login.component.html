@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h4 class="text-center mb-2 login">
+      Login
+    </h4>
+
+    <form class="form-group form-signin">
+      <label for="inputNome" class="sr-only">Email</label>
+      <input type="text"
+             [(ngModel)]="usuario.email"
+             class="form-control mb-2"
+             name="inputNome"
+             placeholder="Insira seu e-mail"
+             #email="ngModel"
+             email
+             required />
+
+      <div class="alert alert-danger text-center" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">E-mail é de preenchimento obrigatório</div>
+        <div *ngIf="email.errors.email">E-mail deve estar no formato correto</div>
+      </div>
+
+      <label for="inputSenha" class="sr-only">Senha</label>
+      <input type="password"
+             [(ngModel)]="usuario.senha"
+             class="form-control mb-2"
+             name="inputSenha"
+             placeholder="Insira a sua senha"
+             #senha="ngModel"
+             required />
+
+      <div class="alert alert-danger text-center" role="alert" *ngIf="senha.invalid && (senha.touched || senha.dirty)">
+        <div *ngIf="senha.errors.required">A senha deve ser preenchida</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-2">
+          <button type="submit" (click)="entrar()" class="btn btn-dark btn-block">Login</button>
+        </div>
+        <div class="col-md-6 mb-2">
+          <button type="submit" class="btn btn-warning btn-block">Cadastrar</button>
+        </div>
+      </div>
+      <img class="image-logo" src="../../../assets/img/logoBestBuy.png" />
+    </form>
+  </div>
+
+</div>
