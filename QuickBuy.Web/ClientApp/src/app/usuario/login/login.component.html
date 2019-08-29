@@ -13,10 +13,14 @@
              name="inputNome"
              placeholder="Insira seu e-mail"
              #email="ngModel"
+             [ngClass]="{
+                'is-invalid':email.invalid && (email.touched || email.dirty),
+                'is-valid':email.valid && (email.touched || email.dirty)
+             }"
              email
              required />
 
-      <div class="alert alert-danger text-center" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div class="invalid-feedbacklogin mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
         <div *ngIf="email.errors.required">E-mail é de preenchimento obrigatório</div>
         <div *ngIf="email.errors.email">E-mail deve estar no formato correto</div>
       </div>
@@ -28,9 +32,13 @@
              name="inputSenha"
              placeholder="Insira a sua senha"
              #senha="ngModel"
+             [ngClass] = "{
+                'is-invalid':senha.invalid && (senha.touched || senha.dirty),
+                'is-valid':senha.valid && (senha.touched || senha.dirty)
+             }"
              required />
 
-      <div class="alert alert-danger text-center" role="alert" *ngIf="senha.invalid && (senha.touched || senha.dirty)">
+      <div class="invalid-feedbacklogin mb-2" *ngIf="senha.invalid && (senha.touched || senha.dirty)">
         <div *ngIf="senha.errors.required">A senha deve ser preenchida</div>
       </div>
 

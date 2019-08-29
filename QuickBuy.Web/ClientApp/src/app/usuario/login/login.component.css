@@ -28,3 +28,12 @@
   margin: auto;
   width: 100%;
 }
+
+.invalid-feedbacklogin {
+  padding: 0px;
+  margin: auto;
+  width: 100%;
+  font-size: 13px;
+  text-align:center;
+  color: #e62929;
+}
